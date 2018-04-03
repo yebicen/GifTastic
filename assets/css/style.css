@@ -1,0 +1,24 @@
+button,
+div,
+form,
+input{
+  margin: 6px;
+}
+
+body{
+    background-image: url("../images/dust_scratches.png");
+}
+
+.download,
+img
+{width:60%;
+}
+
+.item{ 
+    float: left;
+    margin:5px;
+}
+
+form{
+    float: right;
+}
