@@ -9,14 +9,17 @@ body{
     background-image: url("../images/dust_scratches.png");
 }
 
+
+.p,
 .download,
 img
-{width:60%;
+{width:100%;
 }
 
 .item{ 
+    width:30%;
     float: left;
-    margin:5px;
+    margin:6px;
 }
 
 form{

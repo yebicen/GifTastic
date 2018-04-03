@@ -32,7 +32,8 @@ $(document).ready(function() {
             var gifDiv = $("<div class='item'>");
            //
             var rating = results[i].rating;
-            var p = $("<p>").text("Rating: " + rating);
+            var p = $("<p>").html("Rating: " + rating);
+            p.addClass("rating");
           //
             var link = $("<a>").html(downloadbutton);
             link.attr("href", results[i].images.fixed_height.url);
