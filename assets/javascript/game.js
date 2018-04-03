@@ -2,8 +2,6 @@ $(document).ready(function() {
    //initial array
    var topics = ["Harry Porter", "Snow White", "Lion King", "Panda"];
 
-
-
 // displayGif function 
       function displayGif() {
        $("#gifs-appear-here").empty();
@@ -32,15 +30,18 @@ $(document).ready(function() {
 
           for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div class='item'>");
+           //
             var rating = results[i].rating;
+            var p = $("<p>").text("Rating: " + rating);
+          //
+            var link = $("<a>").html(downloadbutton);
+            link.attr("href", results[i].images.fixed_height.url);
+            link.attr("download", "Download")
             var downloadbutton = $("<button>")
             downloadbutton.addClass("download");
             downloadbutton.text("download");
-
-            var p = $("<p>").text("Rating: " + rating);
-          
+          //
             var personImage = $("<img>");
-           
             personImage.attr("src", results[i].images.fixed_height.url);
             personImage.attr("data-still", results[i].images.fixed_height_still.url);
             personImage.attr("data-animate", results[i].images.fixed_height.url);
@@ -48,13 +49,15 @@ $(document).ready(function() {
             personImage.attr("data-state", "still");
             personImage.attr("class", "gif");
             
-            gifDiv.prepend(downloadbutton);
+          //
+            gifDiv.prepend(link);
             gifDiv.prepend(personImage);
             gifDiv.prepend(p);
             
             $("#gifs-appear-here").prepend(gifDiv);
           //end of for loop
           }
+
 
 // onclick event to control the gif to be still or animate
   $(".gif").on("click", function() {
@@ -78,11 +81,8 @@ $(document).ready(function() {
 //end of AJAX call
     });
 
-
  //end of displaygif function   
     }
-
-
 
 // Function for displaying data
 function renderButtons() {
@@ -121,12 +121,8 @@ console.log(topics);
 renderButtons();
 });
 
-
 // Adding click event listeners 
 $(document).on("click", ".character-btn", displayGif);
-
-
-
 
 
  // Calling the renderButtons function to display the intial buttons
