@@ -1,5 +1,4 @@
 # GifTastic
-Week 6 Homework
 BASIC:
 - In the js code, I made a AJAX call from gipjhy website, and append related response info using for loop.
 
